@@ -34,6 +34,11 @@ function Cart() {
   return (
     <div className="cart-container">
       <h1 className="cart-title">Корзина</h1>
+      {cartItems && cartItems.length === 0 && (
+        <>
+          <h1>Корзина пуста</h1>
+        </>
+      )}
       <Link to="/">
         <button className="back-button">Назад к товарам</button>
       </Link>
