@@ -23,7 +23,12 @@ function Cart() {
   }, []);
 
   const removeFromCart = (index) => {
-    dispatch(removeItem(index));
+    const confirmDelete = window.confirm(
+      'Вы действительно хотите удалить этот элемент из корзины?'
+    );
+    if (confirmDelete) {
+      dispatch(removeItem(index));
+    }
   };
 
   return (
